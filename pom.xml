@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.MegaCraft</groupId>
+  <artifactId>ChandCord</artifactId>
+  <version>1.0.0</version>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src</directory>
+        <excludes>
+          <exclude>**/*.java</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.5.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+      	<groupId>org.apache.maven.plugins</groupId>
+      	<artifactId>maven-shade-plugin</artifactId>
+      	<version>3.0.0</version>
+      </plugin>
+      <plugin>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <configuration>
+        <archive>
+          <manifest>
+            <mainClass>fully.qualified.MainClass</mainClass>
+          </manifest>
+        </archive>
+        <descriptorRefs>
+          <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+      </configuration>
+    </plugin>
+    </plugins>
+  </build>
+  <repositories>
+		     <repository>
+		        <id>destroystokyo-repo</id>
+		        <url>https://repo.destroystokyo.com/repository/maven-public//</url>
+		    </repository>
+			<repository>
+			    <id>jitpack.io</id>
+			    <url>https://jitpack.io</url>
+			</repository>
+	  </repositories>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.spigotmc</groupId>
+  		<artifactId>Spigot-Server</artifactId>
+  		<version>LATEST</version>
+  		<scope>system</scope>
+  		<systemPath>${project.basedir}/lib/spigot.jar</systemPath>
+  	</dependency>
+  	<dependency>
+  		<groupId>net.milkbowl.vault</groupId>
+  		<artifactId>Vault</artifactId>
+  		<version>LATEST</version>
+  		<scope>system</scope>
+  		<systemPath>${project.basedir}/lib/Vault(2).jar</systemPath>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.MegaCraft</groupId>
+  		<artifactId>MegaData</artifactId>
+  		<version>LATEST</version>
+  		<scope>system</scope>
+  		<systemPath>${project.basedir}/lib/MegaData.jar</systemPath>
+  	</dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
+    <!-- HttpClient -->
+    <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<dependency>
+	    <groupId>de.btobastian</groupId>
+	    <artifactId>Javacord</artifactId>
+	    <!-- See below what to insert here -->
+	    <version>c5726c0</version>
+	</dependency>
+    <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+  </dependencies>
+</project>

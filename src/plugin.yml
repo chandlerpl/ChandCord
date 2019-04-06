@@ -1,0 +1,18 @@
+name: ChandCord
+main: com.MegaCraft.ChandCord.ChandCord
+version: 1.0.0
+softdepend: [MegaData, Vault]
+author: chandlerpl
+
+commands:
+  chandcord:
+    aliases: [cc,chandcord,dc]
+permissions:
+  #OP permissions
+  ChandCord.admin:
+    default: op
+    description: Access to abilities and commands.
+    children:
+      ChandCord.command.message: true
+      ChandCord.command.help: true
+      ChandCord.command.notification: true
